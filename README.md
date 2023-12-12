@@ -1,4 +1,4 @@
-# Fact News or Real News?
+# Fake News or Real News?
 
 ## Overview
 This project is centered on developing a machine learning model to distinguish between real and fake news. Utilizing the advanced capabilities of BERT (Bidirectional Encoder Representations from Transformers), the goal is to build a robust classifier capable of accurately identifying the legitimacy of news articles.
