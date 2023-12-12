@@ -32,3 +32,5 @@ This project not only demonstrates my skills in machine learning but also reflec
 
 ## Future Enhancements
 Future plans include improving the model's accuracy, enhancing its efficiency, and expanding its capabilities to a wider range of news sources and formats. The project is a step towards utilizing cutting-edge technology in the fight against misinformation.
+
+To obtain my bestModel.pth please download from https://drive.google.com/file/d/1Qahrag8060XhNoUbYIJbnyH_vULKSc4m/view?usp=sharing
