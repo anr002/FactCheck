@@ -3,7 +3,7 @@
 ## Overview
 This project is centered on developing a machine learning model to distinguish between real and fake news. Utilizing the advanced capabilities of BERT (Bidirectional Encoder Representations from Transformers), the goal is to build a robust classifier capable of accurately identifying the legitimacy of news articles.
 
-## Key Features\
+## Key Features
 - **Dataset was obtained from Kaggle's Fake News Competition**: https://www.kaggle.com/competitions/fake-news/overview 
 - **BERT Model Integration**: Employs the BERT model from Hugging Face's Transformers library, renowned for its state-of-the-art performance in natural language processing tasks.
 - **Hyperparameter Optimization**: Uses Optuna for fine-tuning model parameters to achieve optimal performance.
