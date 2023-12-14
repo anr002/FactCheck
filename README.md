@@ -28,7 +28,7 @@ This project is centered on developing a machine learning model to distinguish b
 4. **Deployment for Prediction**: The model is deployed to classify news articles sourced from URLs, providing real-time insights.
 
 ## Technical Approach
-This project not only demonstrates my skills in machine learning but also reflects a commitment to using technology for addressing contemporary challenges. By leveraging the power of machine learning, this project simplifies the complexities of natural language understanding, making it more accessible and efficient.
+This project not only demonstrates my interest in machine learning but also reflects a commitment to using technology for addressing contemporary challenges. By leveraging the power of machine learning, I feel that a lot of societal issues remedied.
 
 ## Future Enhancements
 Future plans include improving the model's accuracy, enhancing its efficiency, and expanding its capabilities to a wider range of news sources and formats. The project is a step towards utilizing cutting-edge technology in the fight against misinformation.
