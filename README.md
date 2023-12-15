@@ -25,7 +25,7 @@ This project is centered on developing a machine learning model to distinguish b
 1. **Data Preparation**: Preprocessing routines are applied to transform news articles into a suitable format for the model.
 2. **Model Configuration and Tuning**: The BERT model is configured for sequence classification, with its hyperparameters optimized for our specific dataset.
 3. **Training and Evaluation**: The model is trained and evaluated, ensuring high accuracy and reliability.
-4. **Deployment for Prediction**: The model is deployed to classify news articles sourced from URLs, providing real-time insights.
+4. **Deployment for Prediction**: The model is deployed to classify news articles sourced from URLs, providing real-time predictions. (Later want to incorproate live fact checking of long form audio sources such as podcasts)
 
 ## Technical Approach
 This project not only demonstrates my interest in machine learning but also reflects a commitment to using technology for addressing contemporary challenges. By leveraging the power of machine learning, I feel that a lot of societal issues remedied.
