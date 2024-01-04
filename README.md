@@ -1,6 +1,9 @@
 # Fake News?
 
 ## Overview
+
+There's been some success in learning to work with BERT but the application is very resouce intensive. I previously rented a server with an NVIDIA GPU but it was quite expensive and building the model took about 20 hours.
+
 This project is centered on developing a machine learning model to distinguish between real and fake news. Utilizing BERT (Bidirectional Encoder Representations from Transformers), the goal is to build a robust classifier capable of accurately identifying the legitimacy of news articles and plan to incorporate this functionality to long form conversations like podcast utilizing OpenAI's Whisper library.
 
 ## Key Features
