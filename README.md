@@ -1,5 +1,8 @@
 # Fake News?
 
+## Changes
+I am currently working to implement RoBERTa (Robustly optimized BERT approach) instead.
+
 ## Overview
 
 There's been some success in learning to work with BERT but the application is very resouce intensive. I previously rented a server with an NVIDIA GPU but it was quite expensive and building the model took about 20 hours.
