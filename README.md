@@ -1,7 +1,8 @@
 # Fake News?
 
 ## Changes
-I am currently working to implement RoBERTa (Robustly optimized BERT approach) instead.
+With RoBERTa I was able to obtain the following:
+Loss: 0.0358, Training Accuracy: 0.9951, Validation Accuracy: 0.9565
 
 ## Overview
 
