@@ -10,7 +10,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # OBtain data
 train_filepath = 'C:/Users/andre/OneDrive/Documents/Data Science Projects/Python/FactCheck/train.csv'
-max_seq_len = 512  # Define the maximum sequence length
+max_seq_len = 150  # Define the maximum sequence length
 train_df_augmented, val_df_augmented = loadPreprocessData(train_filepath, max_seq_len)
 
 # Build tokenizer
@@ -34,7 +34,7 @@ model, training_losses, validation_losses, training_accuracies, validation_accur
 )
 
 #Plot accuracy data
-plot_directory = 'C:/Users/andre/OneDrive/Documents/Data Science Projects/Python/FactCheck/PlotCurves'
+plot_directory = 'C:/Users/andre/Documents/PlotCurves'
 if not os.path.exists(plot_directory):
     os.makedirs(plot_directory)
 plot_file_path = os.path.join(plot_directory, 'learning_curve.png')
@@ -46,7 +46,7 @@ plot_learning_curves(
 )
 
 #Save model
-output_dir = 'C:/Users/andre/OneDrive/Documents/Data Science Projects/Python/FactCheck/ModelSave'
+output_dir = 'C:/Users/andre/Documents/ModelSave'
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 model_save_path = f'{output_dir}/BestModel.pth'

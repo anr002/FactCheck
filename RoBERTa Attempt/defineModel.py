@@ -1,6 +1,7 @@
 import torch
 from torch.utils.data import Dataset
-from transformers import BertTokenizer, BertForSequenceClassification
+#from transformers import BertTokenizer, BertForSequenceClassification
+from transformers import RobertaTokenizer, RobertaForSequenceClassification
 
 
 class factFiction(Dataset):
@@ -37,10 +38,9 @@ class factFiction(Dataset):
 
 
 def create_model(num_labels):
-    model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=num_labels)
+    model = RobertaForSequenceClassification.from_pretrained('roberta-base', num_labels=num_labels)
     return model
 
-
 def get_tokenizer():
-    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
     return tokenizer
