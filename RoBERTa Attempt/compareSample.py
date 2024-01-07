@@ -24,7 +24,7 @@ def predictNewsArticle(model, tokenizer, article_content, max_seq_len):
 # Load the trained model
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = create_model(num_labels=2)
-model.load_state_dict(torch.load('C:/Users/andre/OneDrive/Documents/Data Science Projects/Python/FactCheck/ModelSave/BestModel.pth'))
+model.load_state_dict(torch.load('C:/Users/andre/Documents/ModelSave/BestModel.pth'))
 model.to(device)
 model.eval()
 
@@ -33,7 +33,7 @@ tokenizer = get_tokenizer()
 max_seq_len = 150
 
 # Load the test data
-test_data = pd.read_csv('submit.csv')
+test_data = pd.read_csv('C:/Users/andre/Documents/FactCheck/RoBERTa Attempt/test.csv')
 
 # Initialize a list to store the predictions
 predictions = []
@@ -43,11 +43,16 @@ for i, row in test_data.iterrows():
     # Get the article content
     article_content = row['text']  # Replace 'text' with the correct column name
 
-    # Predict the label for the article
-    is_fake_news = predictNewsArticle(model, tokenizer, article_content, max_seq_len)
+    # Check if the article content is a string
+    if isinstance(article_content, str):
+        # Predict the label for the article
+        is_fake_news = predictNewsArticle(model, tokenizer, article_content, max_seq_len)
 
-    # Append the prediction to the list
-    predictions.append(int(is_fake_news))
+        # Append the prediction to the list
+        predictions.append(int(is_fake_news))
+    else:
+        # If the article content is not a string, append a default value
+        predictions.append(0)  # or whatever default value you want to use
 
 # Create a DataFrame with the IDs and predicted labels
 predicted_data = pd.DataFrame({
@@ -58,8 +63,10 @@ predicted_data = pd.DataFrame({
 # Save the DataFrame to a CSV file
 predicted_data.to_csv('predictions.csv', index=False)
 
+
+
 # Load the answer key
-answer_key = pd.read_csv('sample.csv')
+answer_key = pd.read_csv('C:/Users/andre/Documents/FactCheck/RoBERTa Attempt/submit.csv')
 
 # Calculate accuracy
 accuracy = accuracy_score(answer_key['label'], predicted_data['label'])
