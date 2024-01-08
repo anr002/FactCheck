@@ -4,6 +4,15 @@
 With RoBERTa I was able to obtain the following:
 Loss: 0.0358, Training Accuracy: 0.9951, Validation Accuracy: 0.9565
 
+I am currently working to integrate the LIAR dataset. This dataset requires thourough preprocessing as the dataset provides claims with a verdict. The verdict identifier used are varied. For binary classification (fake vs. reliable), I will need to map these to two categories. For instance, 'true', 'mostly-true', and 'half-true' could be considered 'real', while 'barely-true', 'false', and 'pants-fire' could be considered 'fake'
+
+
+
+## References
+LIAR: A BENCHMARK DATASET FOR FAKE NEWS DETECTION
+
+William Yang Wang, "Liar, Liar Pants on Fire": A New Benchmark Dataset for Fake News Detection, to appear in Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (ACL 2017), short paper, Vancouver, BC, Canada, July 30-August 4, ACL.
+
 ## Overview
 
 There's been some success in learning to work with BERT but the application is very resouce intensive. I previously rented a server with an NVIDIA GPU but it was quite expensive and building the model took about 20 hours.
