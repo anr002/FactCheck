@@ -52,7 +52,7 @@ def plot_learning_curves(training_losses, validation_losses, training_accuracies
     plt.close()
 
 # Modified training function with early stopping
-def trainModel(model, train_data_loader, val_data_loader, optimizer, device, n_epochs, patience=4):
+def trainModel(model, train_data_loader, val_data_loader, optimizer, scheduler, device, n_epochs, patience=4, grad_clip=None):
     training_losses = []
     validation_losses = []
     training_accuracies = []
@@ -74,7 +74,17 @@ def trainModel(model, train_data_loader, val_data_loader, optimizer, device, n_e
             logits = outputs.logits
             loss = criterion(logits, labels)
             loss.backward()
+
+            # Apply gradient clipping if grad_clip is set
+            if grad_clip is not None:
+                torch.nn.utils.clip_grad_norm_(model.parameters(), grad_clip)
+
             optimizer.step()
+
+            # Step the learning rate scheduler if provided
+            if scheduler is not None:
+                scheduler.step()
+
             total_loss += loss.item()
 
         avg_training_loss = total_loss / len(train_data_loader)

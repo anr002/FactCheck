@@ -36,15 +36,21 @@ def data_augmentation(df):
     return pd.DataFrame({'text': text_l, 'label': label_l, 'index': index_l})
 
 # Load and preprocess datasets
-def loadPreprocessData(filepath, max_seq_len):
-    train_df = pd.read_csv(filepath)
-    train_df['text'] = train_df['text'].apply(lambda x: clean_txt(str(x)))
-    train_df['text_split'] = train_df['text'].apply(lambda x: get_split(x, max_seq_len))
+def loadPreprocessData(filepath, max_seq_len, test_size=0.2, random_state=42):
+    df = pd.read_csv(filepath)
+    
+    # Convert labels to numerical format if necessary
+    df['label'] = df['label'].map({'FAKE': 1, 'REAL': 0})
+    df['text'] = df['title'] + " " + df['text']
+    df['text'] = df['text'].apply(lambda x: clean_txt(str(x)))
+    df['text_split'] = df['text'].apply(lambda x: get_split(x, max_seq_len))
 
-    # Create train and validate datasets
-    train_df, val_df = train_test_split(train_df, test_size=0.2, random_state=42)
 
-    # Applying data augmentation. Reset index cause of KeyError: 19561
+    # Split the dataset into train and validate datasets
+    train_df, val_df = train_test_split(df, test_size=test_size, random_state=random_state, shuffle=True)
+
+
+    # Applying data augmentation
     train_df_augmented = data_augmentation(train_df).reset_index(drop=True)
     val_df_augmented = data_augmentation(val_df).reset_index(drop=True)
 

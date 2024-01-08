@@ -14,7 +14,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 #Obtain data and set max token length, BERT takes in a max of 512 tokens, when I obtained my "best hyperparamaters" I used 150 for efficiency
 max_seq_len = 150 
-train_filepath = 'C:/Users/andre/OneDrive/Documents/Data Science Projects/Python/FactCheck/train.csv'
+train_filepath = "C:/Users/andre/Documents/fake_and_real_news_dataset.csv"
 train_df_augmented, val_df_augmented = loadPreprocessData(train_filepath, max_seq_len)
 
 
@@ -23,10 +23,22 @@ tokenizer = get_tokenizer()
 train_dataset = factFiction(train_df_augmented['text'], train_df_augmented['label'], tokenizer, max_seq_len)
 val_dataset = factFiction(val_df_augmented['text'], val_df_augmented['label'], tokenizer, max_seq_len)
 
+
+
 # For hyperparameter tuning, using Optuna
 n_trials = 1 #setting to 1 for quick test
 study = optuna.create_study(direction='maximize')
 study.optimize(lambda trial: objective(trial, train_dataset, val_dataset, device), n_trials)  
+
+df = study.trials_dataframe()
+df.to_csv('study_results.csv', index=False)
+
+# Save the best hyperparameters to a file
+best_hyperparams = study.best_params
+with open('best_hyperparams.txt', 'w') as f:
+    for key, value in best_hyperparams.items():
+        f.write(f'{key}: {value}\n')
+
 
 # Print best hyperparameters obtained from the Optuna studies
 best_hyperparams = study.best_trial.params
@@ -45,10 +57,10 @@ model, training_losses, validation_losses, training_accuracies, validation_accur
 )
 
 # Plotting Accuracy and Save Plot Data
-plot_directory = 'C:/Users/andre/OneDrive/Documents/Data Science Projects/Python/FactCheck/PlotCurves'
+plot_directory = 'C:/Users/andre/Documents/PlotCurves'
 if not os.path.exists(plot_directory):
     os.makedirs(plot_directory)
-plot_file_path = os.path.join(plot_directory, 'learning_curve.png')
+plot_file_path = os.path.join(plot_directory, 'learning_curve2.png')
 
 plot_learning_curves(
     training_losses, validation_losses, training_accuracies, validation_accuracies,
@@ -56,7 +68,7 @@ plot_learning_curves(
     save_path=plot_file_path
 )
 
-output_dir = 'C:/Users/andre/OneDrive/Documents/Data Science Projects/Python/FactCheck/ModelSave'
+output_dir = 'C:/Users/andre/Documents/ModelSave'
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 model_save_path = f'{output_dir}/BestModel.pth'
