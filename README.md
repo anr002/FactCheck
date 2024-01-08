@@ -15,7 +15,7 @@ This was using the same Kaggle dataset but I am currently running a more rigerou
 
 I have expanded the scope of hyperparameter tuning to include additional parameters such as learning rate schedules, weight decay, and warm-up ratios. This comprehensive approach allows us to explore a wider configuration space and identify the most effective settings for our model.
 
-To ensure the robustness of the model, I am currently training the model to run through 100 studies which will take much longer but will ensure that nothing is missed.
+To ensure the robustness of the model, I am currently training the model to run through 100 studies which will take much longer but will ensure that nothing is missed. It is important to note that the transition to roBERTa allows for me to expand the tuning and study length since roBERTa is more efficient than BERT at a minimal price.
 
 ## Key Features
 
