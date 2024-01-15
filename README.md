@@ -11,7 +11,7 @@ Loss: 0.0358, Training Accuracy: 0.9951, Validation Accuracy: 0.9565
 
 This was using the same Kaggle dataset but I am currently running a more rigerous training session using the new enhanced dataset.
 
-After running my model using RoBERTa and optuna with 100 trials with hyperparameters {lr, batch_size, epochs, weight_decay, optimizer_type, grad_clip, warmup_steps} I was able to obtain the following:
+After running my model using RoBERTa and optuna with 100 trials tuning the following hyperparameters lr, batch_size, epochs, weight_decay, optimizer_type, grad_clip, warmup_steps I was able to obtain the following:
 
 ### Epoch [5/5], Loss: 0.0370, Training Accuracy: 0.9958, Validation Accuracy: 0.9056
 
