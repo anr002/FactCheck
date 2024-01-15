@@ -11,6 +11,12 @@ Loss: 0.0358, Training Accuracy: 0.9951, Validation Accuracy: 0.9565
 
 This was using the same Kaggle dataset but I am currently running a more rigerous training session using the new enhanced dataset.
 
+After running my model using RoBERTa and optuna with 100 trials with hyperparameters {lr, batch_size, epochs, weight_decay, optimizer_type, grad_clip, warmup_steps} I was able to obtain the following:
+Epoch [5/5], Loss: 0.0370, Training Accuracy: 0.9958, Validation Accuracy: 0.9056
+
+
+
+
 ## Enhanced Hyperparameter Tuning and Extensive Training
 
 I have expanded the scope of hyperparameter tuning to include additional parameters such as learning rate schedules, weight decay, and warm-up ratios. This comprehensive approach allows us to explore a wider configuration space and identify the most effective settings for our model.
