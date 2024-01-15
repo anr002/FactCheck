@@ -53,7 +53,7 @@ To ensure the robustness of the model, I am currently training the model to run 
 
 ## Technical Approach
 
-This project reflects a commitment to using technology to address contemporary challenges such as misinformation. By leveraging advanced machine learning techniques, we aim to contribute to societal well-being.
+This project reflects a commitment to using technology to address contemporary challenges such as misinformation. By leveraging advanced machine learning techniques, society can provide solutions to these challenges in ways never before possible.
 
 ## Future Enhancements
 
