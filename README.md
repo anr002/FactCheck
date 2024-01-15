@@ -60,4 +60,5 @@ This project reflects a commitment to using technology to address contemporary c
 Future updates will focus on improving the model's accuracy, enhancing its efficiency, and expanding its capabilities to a wider range of news sources and formats. The project is a step towards utilizing cutting-edge technology in the fight against misinformation.
 
 To download the `bestModel.pth`, please visit this [Google Drive link](https://drive.google.com/file/d/1Qahrag8060XhNoUbYIJbnyH_vULKSc4m/view?usp=sharing).
+
 To download the 'BestModelRoBERTa.pth', please visit this [Google Drive link](https://drive.google.com/file/d/1ALIXsOLTSVwo6pMGM8d8SxvZkvVX9K3U/view?usp=sharing).
