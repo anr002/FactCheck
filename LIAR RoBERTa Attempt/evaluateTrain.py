@@ -52,7 +52,7 @@ def plot_learning_curves(training_losses, validation_losses, training_accuracies
     plt.close()
 
 # Modified training function with early stopping
-def trainModel(model, train_data_loader, val_data_loader, optimizer, scheduler, device, n_epochs, patience=4, grad_clip=None):
+def trainModel(model, train_data_loader, val_data_loader, optimizer, device, n_epochs, patience=4, grad_clip=None, scheduler=None):
     training_losses = []
     validation_losses = []
     training_accuracies = []
